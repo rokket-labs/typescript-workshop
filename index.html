@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/reveal.js/dist/theme/black.css"
+    />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
+    <div class="reveal">
+      <div class="slides">
+        <section>Horizontal Slide</section>
+        <section>
+          <section>Vertical Slide 1</section>
+          <section>Vertical Slide 2</section>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

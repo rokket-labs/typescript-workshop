@@ -1,8 +1,14 @@
-import './style.css'
+import Reveal from "reveal.js";
+import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+import "./style.css";
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const app = document.querySelector<HTMLDivElement>("#app");
+
+if (!app) throw Error("No app div");
+
+const deck = new Reveal({
+  plugins: [Markdown],
+});
+
+deck.initialize();
