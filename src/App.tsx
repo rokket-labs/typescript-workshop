@@ -1,13 +1,7 @@
 import React from "react";
 
-const Intro = () => <section>Horizontal Slide</section>;
-
-const Vertical = () => (
-  <section>
-    <section>Vertical Slide 1</section>
-    <section>Vertical Slide 2</section>
-  </section>
-);
+import Intro from "./slides/intro";
+import { Vertical } from "./slides/Vertical";
 
 const App = () => {
   return (
