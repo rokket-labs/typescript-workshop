@@ -1,6 +1,6 @@
 import React from "react";
 
-import Intro from "./slides/intro";
+import { Intro } from "./slides/intro";
 import { Vertical } from "./slides/Vertical";
 
 const App = () => {

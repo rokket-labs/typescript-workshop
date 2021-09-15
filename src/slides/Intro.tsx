@@ -1,7 +1,5 @@
 import React from "react";
 
-const Intro = () => {
+export const Intro = () => {
   return <section>Typescript</section>;
 };
-
-export default Intro;
