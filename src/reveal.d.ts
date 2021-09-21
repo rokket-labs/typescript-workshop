@@ -178,3 +178,8 @@ declare module "reveal.js/plugin/markdown/markdown.esm.js" {
   const Markdown: RevealPlugin;
   export default Markdown;
 }
+
+declare module "reveal.js/plugin/highlight/highlight.esm.js" {
+  const Highlight: RevealPlugin;
+  export default Highlight;
+}

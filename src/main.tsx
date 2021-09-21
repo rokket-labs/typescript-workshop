@@ -2,8 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Reveal from "reveal.js";
 import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
+import Highlight from "reveal.js/plugin/highlight/highlight.esm.js";
+
 import App from "./App";
 
+import "./highlight.js/onedark.css";
 import "./style.css";
 
 const app = document.querySelector<HTMLDivElement>(".reveal");
@@ -18,7 +21,7 @@ ReactDOM.render(
 );
 
 const deck = new Reveal({
-  plugins: [Markdown],
+  plugins: [Markdown, Highlight],
 });
 
 deck.initialize();
