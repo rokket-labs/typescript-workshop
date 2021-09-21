@@ -1,4 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+
+import Subset from "../assets/subset.png";
+
+const Image = styled.img`
+  height: 500px;
+`;
 
 export const Vertical = () => (
   <section>
@@ -14,6 +21,10 @@ export const Vertical = () => (
         <li className="fragment highlight-red">Superset de Javascript</li>
         <li>Añade tipado</li>
       </ul>
+    </section>
+    <section>
+      <h2>¿Qué es Typescript?</h2>
+      <Image src={Subset} />
     </section>
   </section>
 );
