@@ -8,7 +8,7 @@ export const Cons = () => {
       </section>
       <section>
         <ul>
-          <li className="fragment fade-in">Es una “inversión”</li>
+          <li>Es una “inversión”</li>
           <li className="fragment fade-in">
             Requiere de una configuración inicial tanto en Node como en Browser
             (Deno tiene soporte out of the box)
