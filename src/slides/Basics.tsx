@@ -91,7 +91,7 @@ export const Basics = () => {
             cualquier type{" "}
           </li>
           <li className="fragment fade-in">
-            Una variable <Highlighted>uknown</Highlighted> debe tener algún tipo
+            Una variable <Highlighted>unknown</Highlighted> debe tener algún tipo
             de check para asignarse a otro type
           </li>
         </ul>
