@@ -46,6 +46,10 @@ if (isString || isArray) {
 }
 `;
 
+const code7 = /* ts */ `type CssWidth = string | number
+type DayJSDate = Date | number | string
+`;
+
 const Highlighted = styled.span`
   font-style: italic;
   background-color: #333;
@@ -73,6 +77,12 @@ export const Basics = () => {
         </pre>
       </section>
       <section>
+        <h2>Union Types</h2>
+        <pre>
+          <code>{code7}</code>
+        </pre>
+      </section>
+      <section>
         <h2>No confundir</h2>
         <pre>
           <code data-line-numbers="1|2|3">{code4}</code>
@@ -91,8 +101,8 @@ export const Basics = () => {
             cualquier type{" "}
           </li>
           <li className="fragment fade-in">
-            Una variable <Highlighted>unknown</Highlighted> debe tener algún tipo
-            de check para asignarse a otro type
+            Una variable <Highlighted>unknown</Highlighted> debe tener algún
+            tipo de check para asignarse a otro type
           </li>
         </ul>
       </section>
