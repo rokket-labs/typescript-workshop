@@ -14,7 +14,7 @@ export const Pros = () => {
           <li className="fragment fade-in">Mejor experiencia de desarrollo</li>
           <li className="fragment fade-in">“Documentación” implícita</li>
           <li className="fragment fade-in">Features aún no oficiales</li>
-          <li className="fragment fade-in">Uso en RokketLabs</li>
+          <li className="fragment fade-in">Uso en Rokket Labs</li>
         </ul>
       </section>
     </section>

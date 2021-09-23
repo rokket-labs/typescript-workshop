@@ -15,16 +15,16 @@ const codeAsync = /* ts */ `const fetchData = async (id: string): Promise<ApiRes
 const codeWithT = /* ts */ `type AxiosResponse<T> = {
   error: Error,
   data: T
-}
+};
 `;
 
 const codeWithoutT = /* ts */ `type AxiosResponse<ApiResponse> = {
   error: Error,
   data: ApiResponse
-}
+};
 `;
 
-const codeReact = /* ts */ `type MyComponentProps = {
+const codeReact = /* tsx */ `type MyComponentProps = {
   name: string
 }
 
@@ -33,7 +33,7 @@ const MyComponent: FC<MyComponentProps> = ({ name }) => {
 }
 `;
 
-const codeUsingComponent = /* ts */ `// Error
+const codeUsingComponent = /* tsx */ `// Error
 const WrongType: FC = () => {
   return <MyComponent name={5} />
 }

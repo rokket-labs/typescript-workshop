@@ -77,15 +77,15 @@ export const Basics = () => {
         </pre>
       </section>
       <section>
-        <h2>Union Types</h2>
-        <pre>
-          <code>{code7}</code>
-        </pre>
-      </section>
-      <section>
         <h2>No confundir</h2>
         <pre>
           <code data-line-numbers="1|2|3">{code4}</code>
+        </pre>
+      </section>
+      <section>
+        <h2>Union Types</h2>
+        <pre>
+          <code>{code7}</code>
         </pre>
       </section>
       <section>
