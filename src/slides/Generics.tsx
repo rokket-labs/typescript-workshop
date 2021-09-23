@@ -80,6 +80,18 @@ const stringLength = weirdFunction("hola");
 // {original: "hola", isEmpty: false}
 `;
 
+const codeWithUtilities = /* ts */ `type Car = {
+  brand: string;
+  model: string;
+  year: number;
+};
+
+type OnlyBrand = Pick<Car, "brand">;
+// { brand: string }
+type WithoutYear = Omit<Car, "year">;
+// { brand: string; model string }
+`;
+
 export const Generics = () => {
   return (
     <section>
@@ -148,6 +160,14 @@ export const Generics = () => {
         <pre>
           <code className="language-tsx" data-line-numbers="1-4|6-11|13-16">
             {codeUsingExtendedAgain}
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <pre>
+          <code className="language-ts" data-line-numbers="1-5|7-8|9-10">
+            {codeWithUtilities}
           </code>
         </pre>
       </section>

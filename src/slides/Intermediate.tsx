@@ -36,6 +36,16 @@ const MyComponent = ({nickname, age}: MyComponentProps) => {
 }
 `;
 
+const codeWithKeyOf = /* ts*/ `type MyComponentProps = {
+  nickname: string;
+  age: number;
+};
+
+type PropsKeys = keyof MyComponentProps;
+const key1: PropsKeys = "nickname"; // No error
+const key2: PropsKeys = "nicknames"; //  ERROR
+`;
+
 const codeWithObjectIndexed = /* ts */ `const musicos = {
     marcianeke: {
         age: 19,
@@ -53,8 +63,8 @@ const codeWithObjectIndexed = /* ts */ `const musicos = {
 `;
 
 const codeWithRecord = /* ts */ `type Musico = {
-    age:number
-    genre: string
+    age: number;
+    genre: string;
 }
 
 const musicos: Record<string, Musico> = {
@@ -145,6 +155,15 @@ export const Intermediate = () => {
         <h2>Objetos</h2>
         <pre>
           <code className="language-tsx">{codeWithProps}</code>
+        </pre>
+      </section>
+
+      <section>
+        Utilizando keys del objeto
+        <pre>
+          <code className="language-tsx" data-line-numbers="1-6|7|8">
+            {codeWithKeyOf}
+          </code>
         </pre>
       </section>
       <section>
