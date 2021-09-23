@@ -24,23 +24,23 @@ const codeWithoutT = /* ts */ `type AxiosResponse<ApiResponse> = {
 }
 `;
 
-const codeReact = /* ts */ `type MyTypedComponentProps = {
+const codeReact = /* ts */ `type MyComponentProps = {
   name: string
 }
 
-const MyTypedComponent: FC<MyTypedComponentProps> = ({ name }) => {
+const MyComponent: FC<MyComponentProps> = ({ name }) => {
   return <p>{name}</p>
 }
 `;
 
 const codeUsingComponent = /* ts */ `// Error
 const WrongType: FC = () => {
-  return <MyTypedComponent name={5} />
+  return <MyComponent name={5} />
 }
 
 // No error
 const CorrectType: FC = () => {
-  return <MyTypedComponent name={"5"} />
+  return <MyComponent name={"5"} />
 }
 `;
 
