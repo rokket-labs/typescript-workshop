@@ -11,6 +11,7 @@ import { Pros } from "./slides/Pros";
 import { RokketScience } from "./slides/RokketScience";
 import { StringLiterals } from "./slides/StringLiterals";
 import { Thanks } from "./slides/Thanks";
+import { TypeCasting } from "./slides/TypeCasting";
 import { Vertical } from "./slides/Vertical";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
       <Intermediate />
       <Generics />
       <StringLiterals />
+      <TypeCasting />
       <Interesting />
       <Thanks />
     </div>

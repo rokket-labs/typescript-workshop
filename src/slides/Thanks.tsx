@@ -7,6 +7,7 @@ import RokketScienceLogo from "../assets/rokketscience.svg";
 const Logo = styled.img.attrs({ src: RokketScienceLogo })`
   height: 100px;
 `;
+
 export const Thanks = () => {
   return (
     <section>

@@ -116,7 +116,6 @@ const extendingClass = /* ts */ `class Point {
   length() {
     return Math.sqrt(this.x ** 2 + this.y ** 2);
   }
-
 }
 
 interface ExtendedPoint extends Point {
@@ -125,12 +124,7 @@ interface ExtendedPoint extends Point {
 `;
 
 const interfaceWithClass = /* ts */ `class Point2 implements ExtendedPoint {
-  x: number;
-  y: number;
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-  }
+  constructor(private x: number, private y: number) {}
   length() {
     return Math.sqrt(this.x ** 2 + this.y ** 2);
   }
@@ -215,7 +209,7 @@ export const Intermediate = () => {
       <section>
         <h2> "type" vs "interface"</h2>
         <ul>
-          <li>Sintaxis distinta</li>
+          <li>Sintáxis distinta</li>
           <li className="fragment fade-in">
             interface no puede representar primitivos
           </li>
@@ -236,7 +230,7 @@ export const Intermediate = () => {
       <section>
         Extendiendo clases
         <pre>
-          <code className="language-tsx" data-line-numbers="1-9|11-13">
+          <code className="language-tsx" data-line-numbers="1-11|13-15">
             {extendingClass}
           </code>
         </pre>
@@ -249,7 +243,7 @@ export const Intermediate = () => {
       </section>
       <section>Volviendo a objetos...</section>
       <section>
-        <p> ¿Y si no sabemos cual va a ser el key pero sí el value?</p>
+        <p> ¿Y si no sabemos cuál va a ser el key pero sí el value?</p>
         <pre className="fragment fade-in">
           <code className="language-ts">{codeWithObjectIndexed}</code>
         </pre>
