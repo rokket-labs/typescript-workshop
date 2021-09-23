@@ -44,6 +44,42 @@ const CorrectType: FC = () => {
 }
 `;
 
+const codeExtendingGeneric = /* ts */ `type HasLength = {
+  length: number;
+};
+
+const getLength = <T extends HasLength>(variable: T) => {
+  return variable.length;
+};
+`;
+
+const codeUsingExtended = /* ts */ `const arrayLength = getLength(array)
+const stringLength = getLength("hola")
+`;
+
+const codeWithoutExtending = /* ts */ `const getLength = (variable: HasLength) => {
+  return variable.length;
+};
+`;
+
+const codeUsingExtendedAgain = /* ts */ `type WeirdFunctionReturn<T> = {
+   original: T;
+   isEmpty: boolean;
+};
+
+const weirdFunction = <T extends HasLength>(
+  variable: T
+): WeirdFunctionReturn<T> => {
+  const isEmpty = variable.length > 0;
+  return { original: variable, isEmpty };
+};
+
+const arrayLength = weirdFunction(array); 
+// {original: array, isEmpty: false}
+const stringLength = weirdFunction("hola");
+// {original: "hola", isEmpty: false}
+`;
+
 export const Generics = () => {
   return (
     <section>
@@ -78,6 +114,40 @@ export const Generics = () => {
         <pre>
           <code className="language-tsx" data-line-numbers="1-4|6-9">
             {codeUsingComponent}
+          </code>
+        </pre>
+      </section>
+      <section>
+        <pre>
+          <code className="language-ts" data-line-numbers="1-4|5-9">
+            {codeExtendingGeneric}
+          </code>
+        </pre>
+      </section>
+      <section>
+        Sin errores
+        <pre>
+          <code className="language-ts" data-line-numbers="1-4|5-9">
+            {codeUsingExtended}
+          </code>
+        </pre>
+      </section>
+      <section>
+        Es necesario usar generics en este caso?
+        <pre>
+          <code
+            className="fragment fade-in language-ts"
+            data-line-numbers="1-4|5-9"
+          >
+            {codeWithoutExtending}
+          </code>
+        </pre>
+      </section>
+      <section>
+        Utilizando generics
+        <pre>
+          <code className="language-tsx" data-line-numbers="1-4|6-11|13-16">
+            {codeUsingExtendedAgain}
           </code>
         </pre>
       </section>
