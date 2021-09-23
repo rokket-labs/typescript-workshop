@@ -8,7 +8,7 @@ export const Pros = () => {
       </section>
       <section>
         <ul>
-          <li className="fragment fade-in">
+          <li>
             Detecta errores en <strong>compile time</strong>
           </li>
           <li className="fragment fade-in">Mejor experiencia de desarrollo</li>

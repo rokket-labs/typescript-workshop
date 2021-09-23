@@ -27,7 +27,7 @@ const code4 = /* ts */ `const square = (n: number): number => {
 const codeWithProps = /* ts*/ `type MyComponentProps = {
     nickname: string,
     age: number
-}
+};
 
 const MyComponent = ({nickname, age}: MyComponentProps) => {
     return (
@@ -106,6 +106,51 @@ const nueve: number = bar.square();
 const x = bar.#x // Uncaught SyntaxError: Private field '#x' must be declared in an enclosing class
 `;
 
+const extendingClass = /* ts */ `class Point {
+  x: number;
+  y: number;
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+  length() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
+  }
+
+}
+
+interface ExtendedPoint extends Point {
+  sum(): number;
+}
+`;
+
+const interfaceWithClass = /* ts */ `class Point2 implements ExtendedPoint {
+  x: number;
+  y: number;
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+  length() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
+  }
+  sum() {
+    return this.x + this.y;
+  }
+}
+`;
+
+const overridding = /* ts */ `interface Animal {
+  name: string;
+}
+
+interface Animal {
+  family: string;
+}
+
+// { name: string; name: family }
+`;
+
 export const Intermediate = () => {
   return (
     <section>
@@ -138,7 +183,7 @@ export const Intermediate = () => {
       <section>
         <h2>Clases</h2>
         <pre>
-          <code className="language-ts" data-line-numbers="1|3-11|14|15-16">
+          <code className="language-ts" data-line-numbers="1|3-12|14|15-16">
             {codeClasses}
           </code>
         </pre>
@@ -166,6 +211,43 @@ export const Intermediate = () => {
           </code>
         </pre>
       </section>
+
+      <section>
+        <h2> "type" vs "interface"</h2>
+        <ul>
+          <li>Sintaxis distinta</li>
+          <li className="fragment fade-in">
+            interface no puede representar primitivos
+          </li>
+          <li className="fragment fade-in">interface se puede sobreescribir</li>
+          <li className="fragment fade-in">
+            interface puede extenderse de clases
+          </li>
+        </ul>
+      </section>
+      <section>
+        Sobreescribiendo
+        <pre>
+          <code className="language-tsx" data-line-numbers="1-3|4-7|9">
+            {overridding}
+          </code>
+        </pre>
+      </section>
+      <section>
+        Extendiendo clases
+        <pre>
+          <code className="language-tsx" data-line-numbers="1-9|11-13">
+            {extendingClass}
+          </code>
+        </pre>
+      </section>
+      <section>
+        Uso en clases
+        <pre>
+          <code className="language-tsx">{interfaceWithClass}</code>
+        </pre>
+      </section>
+      <section>Volviendo a objetos...</section>
       <section>
         <p> ¿Y si no sabemos cual va a ser el key pero sí el value?</p>
         <pre className="fragment fade-in">
